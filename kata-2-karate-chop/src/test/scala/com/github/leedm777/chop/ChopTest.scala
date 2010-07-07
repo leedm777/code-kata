@@ -14,6 +14,9 @@ class ChopTest extends Spec with ShouldMatchers {
         describe("(binary recursive)") {
             it("should work") {shouldWork(Choppers.binaryRecursive); }
         }
+        describe("(binary iterative)") {
+            it("should work") {shouldWork(Choppers.binaryIterative); }
+        }
     }
 
     def shouldWork(chop: (Int, Array[Int]) => Int) {

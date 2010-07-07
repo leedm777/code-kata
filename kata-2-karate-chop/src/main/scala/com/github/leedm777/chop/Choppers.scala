@@ -21,4 +21,19 @@ object Choppers {
         }
         if (haystack.isEmpty) -1 else f(0, haystack.size)
     }
+
+    def binaryIterative(needle: Int, haystack: Array[Int]): Int = {
+        if (haystack.isEmpty) {
+            -1
+        } else {
+            var begin = 0
+            var end = haystack.size
+            while (begin != end - 1) {
+                val mid = (begin + end) / 2
+                val midVal = haystack(mid)
+                if (needle < midVal) end = mid else begin = mid
+            }
+            if (needle == haystack(begin)) begin else -1
+        }
+    }
 }
