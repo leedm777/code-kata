@@ -1,7 +1,5 @@
 package com.github.leedm777.chop
 
-import java.util.Arrays
-
 object Choppers {
     def fullRecursive(needle: Int, haystack: Array[Int]): Int = {
         def f(n: Int): Int =
