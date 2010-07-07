@@ -36,4 +36,25 @@ object Choppers {
             if (needle == haystack(begin)) begin else -1
         }
     }
+
+    def binarySlice(needle: Int, haystack: Array[Int]): Int = {
+        if (haystack.isEmpty) {
+            -1
+        } else if (haystack.size == 1) {
+            if (haystack(0) == needle) 0 else -1
+        } else {
+            val mid = haystack.size / 2;
+            val midVal = haystack(mid)
+            if (needle < midVal) {
+                binarySlice(needle, haystack.subArray(0, mid))
+            } else {
+                val off = binarySlice(needle, haystack.subArray(mid, haystack.size))
+                if (off == -1) {
+                    -1
+                } else {
+                    mid + off
+                }
+            }
+        }
+    }
 }

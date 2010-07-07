@@ -17,6 +17,9 @@ class ChopTest extends Spec with ShouldMatchers {
         describe("(binary iterative)") {
             it("should work") {shouldWork(Choppers.binaryIterative); }
         }
+        describe("(binary slice)") {
+            it("should work") {shouldWork(Choppers.binarySlice); }
+        }
     }
 
     def shouldWork(chop: (Int, Array[Int]) => Int) {
